@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Básicos</title>
+  </head>
+  <body>
+    <script>
+      /*       const a = {
+        nombre: "Manuel",
+        apellido: "Castro",
+        edad: 33,
+        pasatiempos: ["Ver películas", "cocinar", "dormir"],
+        soltero: true,
+        contacto: {
+          correo: "manuelkas@riseup.net",
+          dirrección: "Calle Esperanza",
+          telefono: "3151238598",
+        },
+        saludar: function () {
+          console.log("Hola :)");
+        },
+        decirCosas: function () {
+          console.log(`
+          Mi nombre es ${this.nombre} ${this.apellido} y
+          tengo ${this.edad} años y me puedes escribir a ${this.contacto.correo}`);
+        },
+      };
+      console.log(a);
+      console.log(a.nombre);
+      console.log(a.apellido);
+      console.log(a.edad);
+      console.log(a.pasatiempos[2]);
+      a.saludar();
+      a.decirCosas();
+      console.log(Object.keys(a));
+      console.log(Object.values(a));
+      console.log(a.hasOwnProperty("tarjeta"));
+
+      //OPERADORES
+
+      console.log(7 == "7");
+      console.log(7 === "7");
+      console.log(7 == "7");
+
+      //CONDICIONALES
+
+      let hora = 2;
+
+      if (hora >= 18) {
+        console.log(`Buenas noches`);
+      } else if (hora >= 12) {
+        console.log(`Buenas tardes`);
+      } else if (hora >= 6) {
+        console.log(`Buenos días`);
+      } else {
+        console.log(`Déjame dormir `);
+      }
+
+      let hora2 = 5;
+
+      let saludo =
+        hora >= 18
+          ? "Buenas noches"
+          : hora >= 12
+          ? "Buenas tardes"
+          : hora >= 6
+          ? "Buenos días"
+          : "Déjame dormir";
+
+      console.log(saludo);
+
+      // FOR IN
+      // Recorre las propiedades de un objeto
+
+      const manuel = { nombre: "Manuel", apellido: "Castañeda", edad: 34 };
+
+      // con notación [objeto[propiedad]] se accede al valor de la propiedad
+      // for in sólo recorre en OBJETOS propiamente dichos, o sea, no en otros
+      // tipos de datos iterable
+      for (const propiedad in manuel) {
+        console.log(`key:${propiedad}, value: ${[manuel[propiedad]]}`);
+      }
+
+      let numeros = [15, 23, 17, 251, 69, 42];
+
+      // FOR OF
+      // trabaja con tipos de datos primitivos como strings, u objetos como arrays.
+      for (const elemento of numeros) {
+        console.log(elemento);
+      }
+
+
+      let palabra = "Esternocleidomastoideo"
+      for(const caracter of palabra){
+        console.log(caracter)
+
+      } */
+
+      // MANEJO DE ERRORES
+      // con errores de sintaxis del programador
+
+      /* try{
+  console.log("El try ejecuta el código a evaluar")
+  variableQueNoExiste
+  console.log("Segundo mensaje del try")
+}
+catch(error){
+  console.log("El Catch captura cualquier error en el try")
+  console.log(error)
+}
+finally{console.log("FInalmente ejecuta lo que hay aquí")}
+
+try {
+  let numero = "s"
+  if (isNaN) {
+    throw new Error("El dato introducido no es un número.")    
+  }
+
+  console.log(numero * numero)
+  
+} catch (error) {
+  console.log(`Se produjo el siguiente error: ${error}`)
+  
+}
+ */
+
+      //////// BREAK y CONTINUE /////////
+
+      //No se pueden usar en métodos de los arreglos, como los on for in o for of
+
+      /*       let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+      for (let i = 0; i < numeros.length; i++) {
+        if (i === 5) {
+          break;
+        }
+
+        console.log(numeros[i]);
+      }
+
+
+      for (let i = 0; i < numeros.length; i++) {
+        if (i === 5) {
+          continue;
+        }
+
+        console.log(numeros[i]);
+      }
+ */
+
+      ///////////// DESTRUCTURACIÓN //////////
+
+      /* 
+ let numeros = [1 ,2, 3]
+
+ // declaracion de variables como se haria traidicionalmente
+ let uno = numeros[0], dos = numeros[1], tres = numeros[2]
+ console.log(uno, dos, tres)
+
+ // con DESTRUCTURACIÓN //
+ // creo arreglo
+
+ const [one, two, three] = numeros
+ console.log(one, two, three)
+
+ const persona = { nombre: "Manuel", apellido: "Castañeda", edad: 34}
+ // al crear las variables debe ponerse entre [] o entre {} dependiendo de si el origen
+ // es un arreglo o un objeto
+ // las variables se tienen que llamar igual que la propiedad del objeto
+ let {nombre, apellido, edad} = persona
+
+ console.log(nombre, apellido, edad) */
+
+      /// OBJETOS LITERALES /////
+      /* 
+      let nombre = "Loki",
+        edad = 7;
+
+      const gato = {
+        nombre: nombre,
+        edad: edad,
+        maullar: function () {
+          console.log("Miau, miauuu");
+        },
+      };
+
+      console.log(gato);
+      gato.maullar();
+
+      const cat = {
+        nombre,
+        edad,
+        raza: "recogido",
+        // nueva forma de declarar funciones
+        maullar() {
+          console.log("Miau, miau, miauuuuuu")
+        },
+      };
+
+      console.log(gato)
+      cat.maullar() */
+
+      /////////// Parámetros REST ///////////////////
+      /* function sumar (a, b, ...c){
+
+  let suma = a + b
+
+  c.forEach(n => {
+     
+    suma += n
+    
+  });
+
+  return suma
+}
+
+console.log(sumar(1,2))
+console.log(sumar(1,2,3))
+console.log(sumar(1,2,3,4))
+console.log(sumar(1,2,3,4,5))
+console.log(sumar(1,2,3,4,5,6))
+console.log(sumar(1,2,3,4,5,6,7))
+
+
+///////////// OPERADOR SPREAD ///////////////
+
+arreglo1 = [1,2,3,4,5]
+arreglo2 = [6,7,8,9,10]
+
+arreglo3 = [...arreglo1, ...arreglo2]
+
+console.log(arreglo1)
+console.log(arreglo2)
+console.log(arreglo3) */
+
+      ///////// funciones ARROW ////////////
+
+      // función expresada
+
+/*       const saludar = function () {
+        console.log("Hola");
+      };
+
+      saludar();
+
+      // función expresada con arrow function
+
+      const saludar2 = () => {
+        console.log("Hola en función arrow");
+      };
+      saludar2();
+
+      // eliminando llaves porque tiene una sola instrucción
+      const saludar3 = () => console.log("Hola en segunda función arrow");
+      saludar3();
+
+      //pasando parámetros
+      const saludar4 = (nombre) => console.log(`Hola, ${nombre}`);
+      saludar4("Flaka");
+
+      //eliminando parentesis porque tiene SÓLO un parámetro,
+      // no aplica si tiene más de un parámetro
+
+      const saludar5 = (nombre) => console.log(`Hola, ${nombre}`);
+      saludar5("Flakita");
+
+      //más....
+      const sumar = function (a, b) {
+        return a + b;
+      };
+      console.log(sumar(8, 4));
+
+      // arrow function, también puede eliminar el return implícito
+      const sumar2 = (a, b) => a + b;
+      console.log(sumar(15, 22));
+
+      //varias líneas
+      const funcionDeVariasLineas = () => {
+        console.log("uno");
+        console.log("dos");
+        console.log("tres");
+      };
+
+      funcionDeVariasLineas();
+
+      const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      numeros.forEach((n, indice) => console.log(`${n} está en ${indice}`));
+
+      // tener cuidado con el CONTEXTO o ÁMBITO, porque las funciones arrow
+      // rompen el contexto local
+
+       const perro = {
+        nombre: "Kissy",
+        ladrar: () =>{
+          console.log(this)
+
+        }
+       }
+
+       perro.ladrar()
+
+       // ahora simplemente con función anónima
+
+       const perro2 = {
+        nombre: "Kissy",
+        ladrar(){
+          console.log(this)
+
+        }
+       }
+
+       perro2.ladrar()
+
+ */
+
+
+ 
+
+    </script>
+  </body>
+</html>

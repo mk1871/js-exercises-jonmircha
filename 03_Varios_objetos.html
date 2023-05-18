@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*      console.log(console)
+        console.error('Esto e sun error')
+        console.warn('Esto es una advertencia')
+        console.info('Esto es un mensaje informativo')
+        console.log('Esto es un registro de lo que ha pasado en nuestra app')
+
+        let nombre = "Manuel",
+        apellido = "Castañeda",
+        edad = 34;
+
+        console.log(nombre)
+        console.log(apellido)
+        console.log(edad)
+        console.log(nombre, apellido, edad)
+        console.log(`Hola, mi nombre es ${nombre} ${apellido}, y tengo ${edad} años`)
+        console.log(`Hola, mi nombre es %s %s y tengo %d años`, nombre, apellido, edad)
+        console.clear()
+        console.log(window)
+        console.log(document)
+        console.dir(window)
+        console.dir(document)
+        console.clear()
+
+        console.group('Cosas por aprender')
+        console.log('Java avanzado')
+        console.log('Python intermedio y de ciencia de datos')
+        console.log('HTML 5')
+        console.log('CSS 3')
+        console.log('Bases de datos')
+        console.log('Nodejs')
+        console.groupEnd()
+
+        console.groupCollapsed('Cosas por aprender')
+        console.log('Java avanzado')
+        console.log('Python intermedio y de ciencia de datos')
+        console.log('HTML 5')
+        console.log('CSS 3')
+        console.log('Bases de datos')
+        console.log('Nodejs')
+        console.groupEnd()
+        console.clear()
+
+        console.log(console)
+        console.table(Object.entries(console).sort())
+
+        const numeros = [1,2,3,4,5],
+        vocales = ['a', 'e', 'i', 'o', 'u']
+
+        console.table(numeros)
+        console.table(vocales)
+
+        const perro ={nombre: "Jacobo", raza: "Yorkie", color: "Negro" }
+        console.table(perro)
+        console.clear()
+        console.time("Cuánto tiempo tarda mi código")
+        const arreglo = Array(1000000);
+
+        for(let i = 0; i < arreglo.length; i++){
+            arreglo[i] = i
+
+        }
+
+        console.timeEnd("Cuánto tiempo tarda mi código")
+        console.clear()
+
+        for (let i = 0; i < 100; i++){
+            console.count("codigo for")
+            console.log(i)
+        }
+        console.clear()
+
+        // para probar cuando falla un código
+        let x = 3,
+        y = 2,
+        pruebaXY = "Se espera que x sea mayor que y siempre";
+
+        console.assert(x<y, x,y, pruebaXY) */
+
+      //############### Objeto Date #########################
+      /*  console.log(Date());
+
+      let fecha = new Date();
+      console.log(fecha);
+      // día del mes
+      console.log(fecha.getDate());
+      // día de la semana - 1 porque es aprte de un arreglo
+      console.log(fecha.getDay());
+      // mes del año -1 porque es parte de un arreglo
+      console.log(fecha.getMonth());
+      // año
+      console.log(fecha.getFullYear());
+      // hora
+      console.log(fecha.getHours());
+      // minutos
+      console.log(fecha.getMinutes());
+      // segundos
+      console.log(fecha.getSeconds());
+      // milisegundos
+      console.log(fecha.getMilliseconds());
+      // fecha humanamente entendible
+      console.log(fecha.toString())
+      // solo fecha
+      console.log(fecha.toDateString())
+      // A hora local
+      console.log(fecha.toLocaleString())
+      // sólo fecha
+      console.log(fecha.toLocaleDateString())
+      // sólo la hora
+      console.log(fecha.toLocaleTimeString())
+      // zona horaria en minutos
+      console.log(fecha.getTimezoneOffset())
+      // datos de la hora cero, EL MES
+      console.log(fecha.getUTCDate())
+      // La hora
+      console.log(fecha.getUTCHours())
+      // ahora en formato timestamp
+      console.log(Date.now())
+
+      // calcular edad
+      let cumpleManuel = new Date(1988, 1, 22)
+      console.log(cumpleManuel) */
+
+      ///////////////////// El objeto Math /////////////////////
+
+      /*     console.log(Math.E)
+      console.log(Math.ceil(4.52))
+      console.log(Math.floor(4.99))
+      console.log(Math.round(4.5089))
+      console.log(Math.PI)
+      console.log(Math.pow(3,6))
+      console.log(Math.SQRT2)
+      console.log(Math.sqrt(9))
+      console.log(Math.abs(7.8))
+      console.log(Math.abs(-7.8))
+      console.log(Math.sign(-9))
+      console.log(Math.sign(19))
+      console.log(Math.sign(0))
+      console.log(Math.sign(-0))
+      console.log(Math.random() * 1000)
+      console.log(Math.round(Math.random() * 1000)) */
+
+      //////////////// Operadores de Cortocircuito ////////////
+      /* Cortocircuito con OR -Cuando el valor de la izquierda en la 
+      expresión siempre pueda validar a true, es el valor que
+      se cargará por defecto.
+
+      Cortocircuito con AND -Cuando el valor de la izquierda en la 
+      expresión siempre pueda validar a false, es el valor que
+      se cargará por defecto.
+
+      Estos operadores se usaban para valores por defecto
+      */
+      /* 
+      function saludar(nombre = "Desconocido") {
+        console.log(`Hola ${nombre}`);
+      }
+
+      saludar("Manuel");
+      saludar();
+
+      function saludar2(nombre) {
+        nombre = nombre || "Desconocido";
+        console.log(`Hola ${nombre}`);
+      }
+
+      saludar2("Manuel");
+      saludar2();
+
+      // OR
+
+      console.log("cadena" || "Valor de la derecha");
+      console.log(19 || "Valor de la derecha");
+      console.log(true || "Valor de la derecha");
+      console.log([] || "Valor de la derecha");
+      console.log({} || "Valor de la derecha");
+      console.log(false || "Valor de la derecha");
+      console.log(null || "Valor de la derecha");
+      console.log(undefined || "Valor de la derecha");
+      console.log("" || "Valor de la derecha");
+      console.log(-2 || "Valor de la derecha");
+      console.log(0 || "Valor de la derecha");
+
+      // AND
+      console.log("cadena" && "Valor de la derecha");
+      console.log(19 && "Valor de la derecha");
+      console.log(true && "Valor de la derecha");
+      console.log([] && "Valor de la derecha");
+      console.log({} && "Valor de la derecha");
+      console.log(false && "Valor de la derecha");
+      console.log(null && "Valor de la derecha");
+      console.log(undefined && "Valor de la derecha");
+      console.log("" && "Valor de la derecha");
+      console.log(-2 && "Valor de la derecha");
+      console.log(0 && "Valor de la derecha");
+ */
+
+      /*  //////////////// Alert, Confirm, Prompt /////////////////
+ console.log(window)
+ //alert('Esto es una alerta')
+ //confirm('Esto es una confirmación')
+ //prompt('Esto pide un valor')
+
+let alerta = alert('Esto es una alerta'), 
+confirmacion = confirm('Esto es una confirmación')
+aviso = prompt('Esto pide un valor')
+
+console.log(alerta)
+console.log(confirmacion)
+console.log(aviso) */
+
+      ///// Expresiones regulares ///////////////////////////////////
+
+      // let cadena =
+      //   "lorem ipsum dolor3 sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+      /*    let expReg = new RegExp("lorem", "i")
+   
+
+   console.log(expReg.test(cadena))
+   console.log(expReg.exec(cadena)) */
+      /* 
+   let expRegular = /"lorem"/i
+   console.log(expRegular.test(cadena))
+   console.log(expRegular.exec(cadena))
+
+   expRegular = /\d/i
+   console.log(expRegular.test(cadena))
+   console.log(expRegular.exec(cadena))
+ */
+
+      /////////////// FUnciones anónimas ///////////////
+      // función anónima autoejecutable
+
+     /*  (function () {
+        console.log("Mi primer IIFE");
+      })();
+
+      (function (d, w, c) {
+        console.log("Mi segunda IIFE");
+        console.log(d);
+        console.log(w);
+        c.log("esto es console.log");
+      })(document, window, console);
+
+
+      // diferentes formas de escribir funciones anónimas
+      //Clásica
+      (function(){
+        console.log('Versión clásica')
+      })();
+
+      // La Crockford (JavaScript: the good parts)
+      ((function(){
+        console.log('Versión Crockford')
+      })());
+
+      //Unaria
+      +function(){
+        console.log('Versión Unaria')
+      }();
+
+      //Facebook
+      !function(){
+        console.log('Versión Facebook')
+      }(); */
+
+
+      // Módulos (import/ export)
+      
+    </script>
+  </body>
+</html>

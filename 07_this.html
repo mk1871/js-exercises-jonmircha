@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>This en JavaScript</title>
+  </head>
+  <body>
+    <h1>This en JavaScript</h1>
+
+    <script>
+      /// this - video 57
+
+      /*  console.log(this);
+      console.log(window);
+      console.log(this === window);
+
+      this.nombre = "Contexto Global";
+      console.log(this.nombre);
+
+      function imprimir() {
+        console.log(this.nombre);
+      }
+
+      imprimir();
+
+      const obj = {
+        nombre: "Contexto Objeto",
+        imprimir: function () {
+          console.log(this.nombre);
+        },
+      };
+
+      obj.imprimir();
+
+      const obj2 = {
+        nombre: "Contexto Objeto 2",
+        imprimir,
+      };
+
+      obj2.imprimir();
+
+      const obj3 = {
+        nombre: "Contexto Objeto 3",
+        // con arrow function en propiedades
+        // agarra el contexto del padre donde se ha creado
+        // es un enlace
+        imprimir: () => {
+          console.log(this.nombre);
+        },
+      };
+
+      obj3.imprimir();
+
+      function Persona(nombre) {
+        this.nombre = nombre; */
+      /*        return function () {
+          // imprime la del contexto global
+         return console.log(this.nombre)
+        }; */
+      /*    return () => console.log(this.nombre);
+      } */
+
+      /*  let manuel = new Persona("Manuel");
+      manuel(); */
+
+      //
+      //
+      // call, apply, bind - video 58
+
+      console.log(this);
+      this.lugar = "Contexto Global";
+
+      function saludar(saludo, aQuien) {
+        console.log(`${saludo}, ${aQuien}. Desde ${this.lugar}.`);
+      }
+
+      saludar("Hola", "Amigo");
+
+      const obj = {
+        lugar: "Contexto Objeto",
+      };
+
+      saludar.call(obj, "Hola", "Manuel");
+      saludar.call(null, "Hola", "Personaje");
+      saludar.call(this, "Hola", "Otro personaje");
+      saludar.apply(obj, ["Adios", "Loki"]);
+      saludar.apply(null, ["Adios", "Loki"]);
+      saludar.apply(this, ["Adios", "Loki"]);
+
+      // bind hace un "enlace"
+
+      const persona = {
+        nombre: "Manuel",
+        saludar: function () {
+          console.log(`Hola, ${this.nombre}`);
+        },
+      };
+
+      persona.saludar();
+
+      const otraPersona = {
+        // bind enlaza el contexto de la función donde se creó
+        saludar: persona.saludar.bind(this)
+      }
+
+      otraPersona.saludar()
+    </script>
+  </body>
+</html>

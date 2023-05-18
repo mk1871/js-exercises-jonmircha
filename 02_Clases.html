@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clases</title>
+  </head>
+  <body>
+    <h1>Prototipos, Clases y Objetos</h1>
+    <script>
+      /*       // En JavaScript las clases son para facilitar la
+      // creación de prototipos
+
+      // objeto literal
+      const animal = {
+        nombre: "Hiena",
+        sonar() {
+          console.log("jijiji");
+        },
+      };
+
+      const animal2 = {
+        nombre: "Leon",
+        sonar() {
+          console.log("Grrrrr");
+        },
+      };
+
+      animal.sonar();
+      animal2.sonar();
+      console.log(animal);
+      console.log(animal2);
+
+      // lo anterior no es funcional porque para crear un nuevo animal
+      // hay que copiar el código nuevamente */
+
+      // crear función Constructora version 1
+      /* function Animal(nombre, sexo) {
+        // Atributos
+        this.nombre = nombre;
+        this.sexo = sexo;
+
+        // métodos
+        this.sonar = function () {
+          console.log("Hago sonidos, existo.");
+        };
+
+        this.saludar = function(){
+            console.log(`Hola, mi nombre es ${this.nombre}`)
+        }
+      }
+
+      const snoopy = new Animal("Tiger", "Macho"),
+        lolaBunny = new Animal("Lola Bunny", "Hembra"); */
+
+      // Función constructora asignando métodos al prorotipo, no a la función
+
+      /* function Animal(nombre, sexo) {
+        // Atributos
+        this.nombre = nombre;
+        this.sexo = sexo;
+      }
+
+      // métodos agregados al prorotipo de la función constructora
+      Animal.prototype.sonar = function () {
+        console.log("Hago sonidos, existo.");
+      };
+
+      Animal.prototype.saludar = function () {
+        console.log(`Hola, mi nombre es ${this.nombre}`);
+      };
+
+      // Herencia prototípica
+      function Perro(nombre, sexo, tamanio) {
+        // hereda del prototipo Animal
+        this.super = Animal;
+        this.super(nombre, sexo);
+        this.tamanio = tamanio;
+      }
+
+      // Perro está heredando de Animal
+      Perro.prototype = new Animal();
+      Perro.prototype.constructor = Perro;
+
+      // sobreescribir métodos
+      Perro.prototype.sonar = function () {
+        console.log("Mi sonido es un ladrido");
+      };
+
+      Perro.prototype.ladrar = function () {
+        console.log("Guau! GUau!");
+      };
+
+      const snoopy = new Animal("Tiger", "Macho"),
+        lolaBunny = new Animal("Lola Bunny", "Hembra");
+
+      console.log(snoopy);
+      console.log(lolaBunny);
+
+      snoopy.sonar();
+      snoopy.saludar();
+      lolaBunny.sonar();
+      lolaBunny.saludar();
+
+      const kissy = new Perro("Kissy", "Hembra", "Grande")
+
+      console.log(kissy)
+      kissy.sonar()
+      kissy.saludar()
+      kissy.ladrar()
+ */
+
+      // Creación de clases
+      class Animal {
+        constructor(nombre, sexo) {
+          // Atributos
+          this.nombre = nombre;
+          this.sexo = sexo;
+          this.raza = null;
+        }
+
+        // métodos
+        sonar() {
+          console.log("Hago sonidos, existo.");
+        }
+
+        saludar() {
+          console.log(`Hola, mi nombre es ${this.nombre}`);
+        }
+      }
+
+      // Herencia
+
+      class Perro extends Animal {
+        constructor(nombre, sexo, tamanio) {
+          // super manda a llamar el constructor de la clase padre
+          super(nombre, sexo);
+          this.tamanio = tamanio;
+        }
+
+        sonar() {
+          console.log("Mi sonido es un ladrido");
+        }
+
+        ladrar() {
+          console.log("Guau! GUau!");
+        }
+
+        // métodos estáticos no requieren crear un objeto para llamarlos
+        static queEres() {
+          console.log(`
+          El perro es un carnívoro doméstico de la familia de los cánidos 
+          que se caracteriza por tener los sentidos del olfato 
+          y el oído muy finos, por su inteligencia y por su
+            fidelidad al ser humano`
+          );
+        }
+
+
+        // getters y setters 
+
+        get getRaza(){
+          return this.raza
+        }
+
+        set setRaza(raza){
+          this.raza = raza 
+        }
+      }
+
+      const mimi = new Animal("Mimi", "Hembra");
+      const scooby = new Perro("Scobby Doo", "Macho", "Gigante");
+
+      console.log(mimi);
+      mimi.saludar();
+      mimi.sonar();
+      console.log(scooby);
+      scooby.saludar();
+      scooby.sonar();
+      scooby.ladrar();
+      Perro.queEres()
+      // obteniendo el getRaza, se obtiene como un atributo no ejecutando función
+      console.log(scooby.getRaza)
+      // los setters también se trabajan como atributos
+      scooby.setRaza = "Huskie"
+      console.log(scooby.getRaza)
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "cadena": "Manuel",
+  "numero": 35,
+  "booleano": true,
+  "arreglo": ["correr", "programar", "cocinar"],
+  "objeto": {
+    "twitter": "@nohaytwt",
+    "email": "tampococorreo@gmail.com"
+  },
+  "nulo": null
+}
