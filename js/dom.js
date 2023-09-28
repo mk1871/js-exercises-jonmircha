@@ -118,7 +118,7 @@ console.log($linkDOM.hasAttribute("data-id")); */
 //
 // DOM: Estilos y variables CSS - Video 64
 
-const $linkDOM = document.querySelector(".link-dom");
+/* const $linkDOM = document.querySelector(".link-dom");
 // accedemos con notación de punto a atributos de estilo
 console.log($linkDOM.style);
 // también con la otra notación, pero se incluyen diferencias. Por ejemplo, en la URL
@@ -160,4 +160,62 @@ $body.style.color = varYellowColor;
 $html.style.setProperty("--dark-color", "#000");
 varDarkColor = getComputedStyle($html).getPropertyValue("--dark-color");
 
-$body.style.setProperty("background-color", varDarkColor);
+$body.style.setProperty("background-color", varDarkColor); */
+
+//
+//
+// 65. DOM: Clases CSS - video 65
+/* const $card = document.querySelector(".card");
+console.log($card);
+console.log($card.className);
+console.log($card.classList);
+// averigua si una clase contiene x atributo
+console.log($card.classList.contains("rotate-45"));
+// agrega una clase
+$card.classList.add("rotate-45");
+// averigua si una clase es contenida
+console.log($card.classList.contains("rotate-45"));
+console.log($card.className);
+console.log($card.classList);
+// quita una clase
+$card.classList.remove("rotate-45");
+console.log($card.classList.contains("rotate-45"));
+// agrega o quita según estado actual
+$card.classList.toggle("rotate-45");
+console.log($card.classList.contains("rotate-45"));
+$card.classList.toggle("rotate-45");
+console.log($card.classList.contains("rotate-45"));
+$card.classList.toggle("rotate-45");
+//reemplazar clases
+$card.classList.replace("rotate-45", "rotate-135");
+// agregar varias clases a la vez
+$card.classList.add("opacity-80", "sepia");
+$card.classList.toggle("opacity-80", "sepia");
+$card.classList.toggle("opacity-80", "sepia"); */
+
+/* // 66. DOM: Texto y HTML
+const $whatIsDOM = document.getElementById("que-es");
+let text = `
+<p>
+El Modelo de Objetos del Documento (<b><i>DOM Documento Object Model</i></b>) es un API para documentos HTML y XML. 
+</p>
+<p>
+Este provee una representación estructural del documento, permitiendo modificar su contenido y representación visual mediante código JS.
+</p>
+<p>
+<mark>El DOM no es parte de la especificación de JavaScript, es una API para los navegadores.</mark></p>
+`;
+// innerText no reconoce etiquetas HTML
+//$whatIsDOM.innerText = text;
+// textContent tampoco reconoce HTML, y elimina los saltos de línea
+$whatIsDOM.textContent = text;
+// para reconocer las etiquetas HTML, se debe usar innerHTML
+$whatIsDOM.innerHTML = text;
+//outerHTML hace lo mismo pero reemplazando el elemento al que se lo estoy aplicando por el contenido del mismo
+$whatIsDOM.outerHTML = text;
+ */
+
+// 67. DOM Traversing: Recorriendo el DOM
+const $cards = document.querySelector(".cards");
+console.log($cards);
+console.log($cards.children);
