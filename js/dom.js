@@ -216,6 +216,29 @@ $whatIsDOM.outerHTML = text;
  */
 
 // 67. DOM Traversing: Recorriendo el DOM
-const $cards = document.querySelector(".cards");
+/* const $cards = document.querySelector(".cards");
 console.log($cards);
 console.log($cards.children);
+console.log($cards.children[2]);
+console.log($cards.parentElement);
+console.log($cards.firstElementChild);
+console.log($cards.lastElementChild);
+console.log($cards.previousElementSibling);
+console.log($cards.nextElementSibling);
+console.log($cards.children[3].closest("section"));
+ */
+
+// 68. DOM: Creando Elementos y Fragmentos
+
+const $figure = document.createElement("figure"),
+  $img = document.createElement("img"),
+  $figcaption = document.createElement("figcaption"),
+  $figcaptionText = document.createTextNode("Animals"),
+  $cards = document.querySelector(".cards");
+
+$img.setAttribute("src", "http://placekitten.com/200/200");
+$img.setAttribute("alt", "Animals");
+$figcaption.appendChild($figcaptionText);
+$figure.appendChild($img);
+$figure.appendChild($figcaption);
+$cards.appendChild($figure);
