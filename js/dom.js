@@ -229,7 +229,7 @@ console.log($cards.children[3].closest("section"));
  */
 
 // 68. DOM: Creando Elementos y Fragmentos
-
+/* 
 const $figure = document.createElement("figure"),
   $img = document.createElement("img"),
   $figcaption = document.createElement("figcaption"),
@@ -303,3 +303,4 @@ meses.forEach((el) => {
 document.write("<h3>Meses del año</h3>");
 $ul3.appendChild($fragment);
 document.body.appendChild($ul3);
+ */
