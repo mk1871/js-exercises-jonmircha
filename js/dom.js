@@ -304,3 +304,145 @@ document.write("<h3>Meses del año</h3>");
 $ul3.appendChild($fragment);
 document.body.appendChild($ul3);
  */
+
+/* **********     Curso JavaScript: 69. DOM: Templates HTML - #jonmircha     ********** */
+/* ($cards = document.querySelector(".cards")),
+  ($template = document.getElementById("template-card").content),
+  ($fragment = document.createDocumentFragment()),
+  (cardsContent = [
+    {
+      title: "Tecnología",
+      img: "https://loremflickr.com/200/200/tech",
+    },
+    {
+      title: "Animales",
+      img: "https://loremflickr.com/200/200/animals",
+    },
+    {
+      title: "Arquitectura",
+      img: "https://loremflickr.com/200/200/arch",
+    },
+    {
+      title: "Gente",
+      img: "https://loremflickr.com/200/200/people",
+    },
+    {
+      title: "Naturaleza",
+      img: "https://loremflickr.com/200/200/nature",
+    },
+  ]);
+cardsContent.forEach((el) => {
+  $template.querySelector("img").setAttribute("src", el.img);
+  $template.querySelector("img").setAttribute("alt", el.title);
+  $template.querySelector("figcaption").textContent = el.title;
+
+  let $clone = document.importNode($template, true);
+  $fragment.appendChild($clone);
+});
+
+$cards.appendChild($fragment);
+ */
+
+/* **********     Curso JavaScript: 70. DOM: Modificando Elementos (Old Style) - #jonmircha     ********** */
+/* const $cards = document.querySelector(".cards"),
+  $newCard = document.createElement("figure");
+$cloneCards = $cards.cloneNode(true);
+
+$newCard.innerHTML = `
+<img src="https://loremflickr.com/200/200/any" alt="Nature" />
+        <figcaption>Any</figcaption>
+  
+`;
+$newCard.classList.add("card");
+
+//$cards.replaceChild($newCard, $cards.children[2]);
+// $cards.insertBefore($newCard, $cards.firstElementChild);
+// $cards.removeChild($cards.lastElementChild);
+document.body.appendChild($cloneCards); */
+
+/* **********     Curso JavaScript: 71. DOM: Modificando Elementos (Cool Style) - #jonmircha     ********** */
+
+/*
+.insertAdjacent...
+  .insertAdjacentElement(position, el)
+  .insertAdjacentHTML(position, html)
+  .insertAdjacentText(position, text)
+
+Posiciones:
+  beforebegin(hermano anterior)
+  afterbegin(primer hijo)
+  beforeend(ultimo hijo)
+  afterend(hermano siguiente)
+*/
+
+/* const $cards = document.querySelector(".cards"),
+  $newCard = document.createElement("figure");
+
+let $contentCard = `
+<img src="https://loremflickr.com/200/200/any" alt="Any" />
+        <figcaption></figcaption>
+  
+`;
+$newCard.classList.add("card");
+$newCard.insertAdjacentHTML("beforeend", $contentCard);
+$newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "Any");
+//$cards.insertAdjacentElement("afterbegin", $newCard);
+
+$cards.append($newCard);
+ */
+
+/* **********     Curso JavaScript: 72. DOM: Manejadores de Eventos - #jonmircha y Curso JavaScript: 73. DOM: Eventos con Parámetros y Remover Eventos - #jonmircha     ********** */
+/*
+Los eventos son los mecanismos que tenemos en JavaScript para controlar las acciones del usuario y definir el comportamiento del documento en cierto momento o cuando se cumplan ciertas condiciones.
+
+Las funciones que se ejecutan en un evento se llaman Event Handler (Manejador de Eventos).
+
+https://developer.mozilla.org/en-US/docs/Web/Events
+*/
+
+function holaMundo() {
+  alert("Hola Mundo");
+  console.log(event);
+}
+
+function saludar(nombre = "Desconocido/a") {
+  alert(`Hola, ${nombre}.`);
+  console.log(event);
+}
+
+const $eventoSemantico = document.getElementById("evento-semantico"),
+  $eventoMultiple = document.getElementById("evento-multiple"),
+  $eventoRemover = document.getElementById("evento-remover");
+
+// ponemos la función sin paréntesis para que no se ejecute sino cuando se realice el evento
+$eventoSemantico.onclick = holaMundo;
+// con funcion anonima
+$eventoSemantico.onclick = function (e) {
+  alert("Manejador de Eventos semántico");
+  console.log(e);
+  console.log(event);
+};
+
+$eventoMultiple.addEventListener("click", holaMundo);
+$eventoMultiple.addEventListener("click", (e) => {
+  alert("Hola Mundo, manejador de eventos múltiple");
+  console.log(e);
+  console.log(e.type);
+  console.log(e.target);
+  console.log(event);
+});
+// agregando parámetros a eventos, se hace con arrow functions dentro de las que va la función
+// con los parámetros que queramos
+$eventoMultiple.addEventListener("click", () => {
+  saludar();
+  saludar("Manuel");
+});
+
+const removerDobleClick = (e) => {
+  alert(`Removiendo el evento de tipo ${e.type}`);
+  console.log(e);
+  $eventoRemover.removeEventListener("dblclick", removerDobleClick);
+  $eventoRemover.disabled = true;
+};
+
+$eventoRemover.addEventListener("dblclick", removerDobleClick);
